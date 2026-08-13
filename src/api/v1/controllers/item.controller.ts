@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { ItemService } from '../../../services/item.service';
+import { getRouteParam } from '../../../utils/get-route-param';
 
 /**
  * Controller layer: translates HTTP requests into service calls
@@ -28,7 +29,8 @@ export class ItemController {
 
   getById = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-      const item = await this.itemService.getItemById(req.params.id);
+      const id = getRouteParam(req.params.id, 'id');
+      const item = await this.itemService.getItemById(id);
       res.status(200).json({ status: 'success', data: item });
     } catch (err) {
       next(err);
@@ -37,7 +39,8 @@ export class ItemController {
 
   update = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-      const item = await this.itemService.updateItem(req.params.id, req.body);
+      const id = getRouteParam(req.params.id, 'id');
+      const item = await this.itemService.updateItem(id, req.body);
       res.status(200).json({ status: 'success', data: item });
     } catch (err) {
       next(err);
@@ -46,7 +49,8 @@ export class ItemController {
 
   delete = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-      await this.itemService.deleteItem(req.params.id);
+      const id = getRouteParam(req.params.id, 'id');
+      await this.itemService.deleteItem(id);
       res.status(204).send();
     } catch (err) {
       next(err);
