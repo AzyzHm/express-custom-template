@@ -75,7 +75,7 @@ express-template/
 
 ```
 git clone https://github.com/AzyzHm/express-custom-template.git
-cd Express-Custom-Template
+cd express-custom-template
 npm install
 ```
 
