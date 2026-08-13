@@ -122,7 +122,7 @@ npm run test:cov
 
 ```
 npm run lint
-npm run format:check
+c
 ```
 
 `eslint` (via the unified `typescript-eslint` package) and `prettier` are also run

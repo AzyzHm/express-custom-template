@@ -8,6 +8,12 @@ module.exports = tseslint.config(
   ...tseslint.configs.recommended,
   eslintConfigPrettier,
   {
+    files: ['*.js'],
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
+    },
+  },
+  {
     files: ['**/*.ts'],
     rules: {
       '@typescript-eslint/no-unused-vars': [

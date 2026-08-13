@@ -47,9 +47,7 @@ describe('ItemService (unit)', () => {
   it('throws NotFoundException when updating a missing item', async () => {
     repository.updateById.mockResolvedValue(null);
 
-    await expect(service.updateItem('missing', { name: 'X' })).rejects.toThrow(
-      NotFoundException,
-    );
+    await expect(service.updateItem('missing', { name: 'X' })).rejects.toThrow(NotFoundException);
   });
 
   it('throws NotFoundException when deleting a missing item', async () => {

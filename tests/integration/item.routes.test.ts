@@ -6,9 +6,7 @@ const app = createApp();
 
 describe('Item routes (integration)', () => {
   it('creates an item', async () => {
-    const res = await request(app)
-      .post('/api/v1/items')
-      .send({ name: 'Widget', quantity: 3 });
+    const res = await request(app).post('/api/v1/items').send({ name: 'Widget', quantity: 3 });
 
     expect(res.status).toBe(201);
     expect(res.body.data).toMatchObject({ name: 'Widget', quantity: 3 });
@@ -48,9 +46,7 @@ describe('Item routes (integration)', () => {
   it('updates an item', async () => {
     const created = await ItemModel.create({ name: 'Old Name', quantity: 1 });
 
-    const res = await request(app)
-      .patch(`/api/v1/items/${created._id}`)
-      .send({ name: 'New Name' });
+    const res = await request(app).patch(`/api/v1/items/${created._id}`).send({ name: 'New Name' });
 
     expect(res.status).toBe(200);
     expect(res.body.data.name).toBe('New Name');

@@ -18,9 +18,7 @@ describe('Item lifecycle (e2e)', () => {
     expect(getRes.body.data.quantity).toBe(10);
 
     // 3. Update
-    const updateRes = await request(app)
-      .patch(`/api/v1/items/${id}`)
-      .send({ quantity: 20 });
+    const updateRes = await request(app).patch(`/api/v1/items/${id}`).send({ quantity: 20 });
     expect(updateRes.status).toBe(200);
     expect(updateRes.body.data.quantity).toBe(20);
 

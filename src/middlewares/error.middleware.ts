@@ -10,7 +10,6 @@ interface ErrorResponseBody {
   stack?: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function errorMiddleware(
   err: Error,
   req: Request,
