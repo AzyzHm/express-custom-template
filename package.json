@@ -47,9 +47,9 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/jest": "^30.0.0",
-    "@types/node": "^26.6.5",
+    "@types/node": "^26.6.6",
     "@types/supertest": "^7.2.1",
-    "eslint": "^10.12.0",
+    "eslint": "^10.14.0",
     "eslint-config-prettier": "^10.1.8",
     "husky": "^9.1.7",
     "jest": "^30.5.2",
@@ -57,11 +57,11 @@
     "mongodb-memory-server": "^11.3.0",
     "pino-pretty": "^13.2.0",
     "prettier": "^3.9.10",
-    "supertest": "^7.3.1",
-    "ts-jest": "^29.4.14",
+    "supertest": "^7.3.2",
+    "ts-jest": "^29.4.15",
     "tsx": "^4.23.15",
     "typescript": "^5.7.2",
-    "typescript-eslint": "^8.71.1"
+    "typescript-eslint": "^8.72.1"
   },
   "lint-staged": {
     "*.ts": [
